@@ -1,4 +1,4 @@
-import { Button, Card, Input, Layout, Table, Tabs, Tag } from "antd";
+import { Alert, Button, Card, Input, Layout, Table, Tabs, Tag } from "antd";
 import Sider from "../../components/sider";
 import { AppstoreOutlined, TableOutlined } from "@ant-design/icons";
 import { useEffect, useMemo, useState } from "react";
@@ -18,6 +18,10 @@ const TodoCard = ({ todo }: { todo: Todo }) => {
 			</Tag>
 		</Card>
 	);
+};
+
+const AlertMessage = ({ type, message, description }: { type: "error" | "info"; message: string; description?: string }) => {
+	return <Alert message={message} description={description} type={type} showIcon className="mb-4" />;
 };
 
 export default function DashboardPage() {
@@ -43,6 +47,7 @@ export default function DashboardPage() {
 	/* State */
 	const [todos, setTodos] = useState<Todo[]>([]);
 	const [loading, setLoading] = useState<boolean>(true);
+	const [error, setError] = useState<string | null>(null);
 	const [viewMode, setViewMode] = useState<"table" | "card">("table");
 	const [status, setStatus] = useState<string>("-1");
 	const [wild, setWild] = useState<string>("");
@@ -64,11 +69,15 @@ export default function DashboardPage() {
 		fetch("https://dummy-json.mock.beeceptor.com/todos")
 			.then((res) => res.json())
 			.then((data) => {
+				if (!data || data.length === 0) {
+					throw new Error("No todos found");
+				}
 				setTodos(data);
 				setLoading(false);
 			})
 			.catch((error) => {
 				console.error("Error fetching todos:", error);
+				setError(error.message);
 				setLoading(false);
 			});
 	}, []);
@@ -116,7 +125,11 @@ export default function DashboardPage() {
 					]}
 				/>
 
-				{viewMode === "table" ? (
+				{error ? (
+					<AlertMessage type="error" message="Error" description={error} />
+				) : filteredTodos.length === 0 && !loading ? (
+					<AlertMessage type="info" message="No todos found" />
+				) : viewMode === "table" ? (
 					<div className="ant-layout-card">
 						<Table dataSource={filteredTodos} columns={columns} loading={loading} rowKey="id" pagination={{ pageSize: 10 }} />
 					</div>
