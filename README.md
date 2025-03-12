@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# dot-test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ini adalah aplikasi web yang dibangun menggunakan React dan telah dideploy di Vercel.
 
-## Available Scripts
+## Panduan Instalasi
 
-In the project directory, you can run:
+Untuk menjalankan proyek ini secara lokal, ikuti langkah-langkah berikut:
 
-### `npm start`
+1. **Kloning repositori:**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+   ```bash
+   git clone https://github.com/vinaekalaylani/dot-test.git
+   ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. **Masuk ke direktori proyek:**
 
-### `npm test`
+   ```bash
+   cd dot-test
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Instal dependensi:**
 
-### `npm run build`
+   Pastikan Anda memiliki `npm` terinstal. Kemudian, jalankan:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Jalankan aplikasi:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   Untuk menjalankan aplikasi dalam mode pengembangan, gunakan:
 
-### `npm run eject`
+   ```bash
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   Aplikasi akan berjalan di `http://localhost:3000`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Data Dummy
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Aplikasi ini tidak memerlukan data dummy khusus. Anda dapat login dengan memasukkan informasi apa pun sesuai kebutuhan.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Environment Variables
 
-## Learn More
+Tidak ada variabel lingkungan atau kredensial aplikasi pihak ketiga yang diperlukan untuk menjalankan aplikasi ini.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Aplikasi ini telah dideploy menggunakan Vercel. Anda dapat mengaksesnya melalui tautan berikut: [https://dot-test-omega.vercel.app/login](https://dot-test-omega.vercel.app/login)
