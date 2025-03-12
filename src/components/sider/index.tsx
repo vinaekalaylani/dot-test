@@ -34,7 +34,7 @@ export default function Sider() {
 	});
 
 	const items = [
-		getItem("Dashboard", "/dashboard", false, <Icon type="fa" name="faGaugeHigh" />)
+		getItem("Dashboard", "/", false, <Icon type="fa" name="faGaugeHigh" />)
 	];
 
 	const handleLogout = () => {

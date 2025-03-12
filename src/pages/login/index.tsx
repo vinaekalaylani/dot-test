@@ -48,8 +48,8 @@ export default function LoginPage() {
 						onFinishFailed={handleFailed}
 					>
 						<div className="text-center mb-6">
-							<h2 className="text-[#23547b] font-bold text-lg mt-3">Parcel Shipping Rate Checker</h2>
-							<p className="text-gray-600 text-sm">Sign in to access your account and manage shipments.</p>
+							<h2 className="text-[#23547b] font-bold text-lg mt-3">Todo App</h2>
+							<p className="text-gray-600 text-sm">Sign in to manage your tasks.</p>
 						</div>
 
 						<InputComp
